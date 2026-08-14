@@ -1,4 +1,10 @@
 package DAVID.escuela.dto.datos;
 
-public record DatosCalificacion() {
+import java.math.BigDecimal;
+
+public record DatosCalificacion(
+        String curso,
+        String periodo,
+        BigDecimal calificacion
+) {
 }

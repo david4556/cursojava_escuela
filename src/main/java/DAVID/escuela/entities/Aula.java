@@ -4,6 +4,9 @@ import DAVID.escuela.utils.StringCustomUtils;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "AULAS")
 @Getter
@@ -23,6 +26,10 @@ public class Aula {
     @Column(name = "CAPACIDAD", nullable = false)
     private Integer capacidad;
 
+    @Builder.Default
+    @OneToMany(mappedBy = "aula")
+    private List<Grupo> grupos = new ArrayList<>();
+
     public void validarDatos(String nombre,  Integer capacidad) {
 
         StringCustomUtils.validarTamanio(nombre, 1, 100,
@@ -30,9 +37,15 @@ public class Aula {
         );
 
 
-        if (capacidad == null || capacidad <= 0) {
+        if (capacidad == null) {
             throw new IllegalArgumentException(
-                    "La capacidad deben ser mayores a 0"
+                    "La capacidad es requerida"
+            );
+        }
+
+        if (capacidad <= 0) {
+            throw new IllegalArgumentException(
+                    "La capacidad debe ser mayor a 0"
             );
         }
     }

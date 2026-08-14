@@ -1,4 +1,13 @@
 package DAVID.escuela.dto.datos;
 
-public record DatosGrupo() {
+
+
+public record DatosGrupo(
+
+        String curso,
+        String maestro,
+        String aula,
+        String periodo
+
+) {
 }

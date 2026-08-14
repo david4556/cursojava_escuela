@@ -1,4 +1,12 @@
 package DAVID.escuela.dto.cursos;
 
-public record CursoResponse() {
+import jakarta.validation.constraints.*;
+
+public record CursoResponse(
+
+       Long id,
+        String nombre,
+        String descripcion,
+        Integer creditos
+) {
 }

@@ -1,4 +1,18 @@
 package DAVID.escuela.dto.datos;
 
-public record DatosAlumno() {
+import java.math.BigDecimal;
+
+public record DatosAlumno(
+
+        String matricula,
+
+        String nombre,
+
+        String email,
+
+        String fechaIngreso,
+
+        BigDecimal promedio
+
+) {
 }

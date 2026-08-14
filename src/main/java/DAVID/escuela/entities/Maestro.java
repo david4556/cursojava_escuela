@@ -17,6 +17,7 @@ import java.util.List;
 public class Maestro {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_MAESTRO")
     private Long id;
 
