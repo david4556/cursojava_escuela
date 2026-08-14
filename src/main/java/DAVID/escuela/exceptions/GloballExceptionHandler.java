@@ -1,6 +1,7 @@
-package com.david.almacen.exceptions;
+package DAVID.escuela.exceptions;
 
-import com.david.almacen.dto.CustomErrorResponse;
+
+import DAVID.escuela.dto.CustomErrorResponse;
 import jakarta.validation.ConstraintViolationException;
 import  lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -50,7 +51,12 @@ public class GloballExceptionHandler {
                 new CustomErrorResponse(HttpStatus.CONFLICT.value(), e.getMessage())
         );
     }
-
+    @ExceptionHandler(EntidadRelacionadaException.class)
+    public ResponseEntity<CustomErrorResponse> handleEntidadRelacionadaException(EntidadRelacionadaException e) {
+        log.warn("Error al eliminar un recurso: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(new CustomErrorResponse(HttpStatus.CONFLICT.value(), e.getMessage()));
+    }
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<CustomErrorResponse> handleNoSuchElementException(NoSuchElementException e) {
         log.warn("No se encontró recurso: {}", e.getMessage());

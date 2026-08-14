@@ -1,4 +1,14 @@
 package DAVID.escuela.dto.horarios;
 
-public record HorarioResponse() {
+import DAVID.escuela.dto.datos.DatosGrupo;
+
+public record HorarioResponse(
+
+        Long id,
+
+        DatosGrupo grupo,
+
+        String horario
+
+) {
 }

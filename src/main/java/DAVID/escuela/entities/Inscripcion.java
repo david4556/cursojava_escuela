@@ -35,9 +35,7 @@ public class Inscripcion {
 
      @OneToOne(mappedBy = "inscripcion")
      private Calificacion calificacion;
-    public void validarDatos(
-            Alumno alumno,
-            Grupo grupo) {
+    public void validarDatos(Alumno alumno, Grupo grupo) {
 
         if (alumno == null) {
             throw new IllegalArgumentException("El alumno es requerido");

@@ -5,6 +5,9 @@ import DAVID.escuela.utils.StringCustomUtils;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "GRUPOS" ,uniqueConstraints = @UniqueConstraint(
         name ="GRUPO_CU_MA_AU_PE_UK",
@@ -35,6 +38,9 @@ public class Grupo {
 
     @Column(name = "PERIODO", nullable = false, length = 20)
     private String periodo;
+    @OneToMany(mappedBy = "grupo", fetch = FetchType.LAZY)
+    @Builder.Default
+    private List<Horario> horarios = new ArrayList<>();
 
 
     public void validarDatos(Curso curso, Maestro maestro, Aula aula, String periodo) {

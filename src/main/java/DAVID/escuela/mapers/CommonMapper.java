@@ -1,8 +1,8 @@
 package DAVID.escuela.mapers;
 
-public interface CommonMaper<RQ, RS ,E> {
+public interface CommonMapper<RQ, RS ,E> {
  E requestAEntidad(RQ request);
 
- RS entidadAResonse(E entidad);
+ RS entidadAResponse(E entidad);
 }
 

@@ -4,6 +4,9 @@ import DAVID.escuela.utils.StringCustomUtils;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "CURSOS")
 @Getter
@@ -25,6 +28,12 @@ public class Curso {
 
     @Column(name = "CREDITOS", nullable = false)
     private Integer creditos;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "curso")
+    private List<Grupo> grupos = new ArrayList<>();
+
+
 
 
     public void validarDatos(String nombre, String descripcion, Integer creditos) {

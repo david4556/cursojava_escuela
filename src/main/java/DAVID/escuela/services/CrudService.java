@@ -1,17 +1,15 @@
 package DAVID.escuela.services;
 
 import java.util.List;
+public interface CrudService<RQ, RS> {
 
-public interface CrudServices<RQ,RS> {
+    List<RS> listar();
 
-    List<RS>  Listar();
-
-     RS obtenerPorId(Long id);
+    RS obtenerPorId(Long id);
 
     RS registrar(RQ request);
 
     RS actualizar(RQ request, Long id);
 
-    void eliminar (Long id);
-
+    void eliminar(Long id);
 }

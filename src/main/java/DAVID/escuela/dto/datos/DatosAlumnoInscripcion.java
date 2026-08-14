@@ -2,14 +2,12 @@ package DAVID.escuela.dto.datos;
 
 import java.math.BigDecimal;
 
-public record DatosAlumno(
+public record DatosAlumnoInscripcion(
 
         String nombre,
-        String apellidoPaterno,
-        String apellidoMaterno,
-        String matricula,
+           String matricula,
         String email,
-        String fechaIngreso,
-        BigDecimal promedio
+        String fechaIngreso
+
 ) {
 }

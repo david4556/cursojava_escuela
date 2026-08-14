@@ -1,4 +1,8 @@
 package DAVID.escuela.dto.datos;
 
-public record DatosCurso() {
+public record DatosCurso(
+        String nombre,
+        String descripcion,
+        Integer creditos
+) {
 }

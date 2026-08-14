@@ -1,4 +1,9 @@
-package DAVID.escuela.services.Inscripciones;
+package DAVID.escuela.services.inscripciones;
 
-public interface InscripcionService {
+
+import DAVID.escuela.dto.inscripciones.InscripcionRequest;
+import DAVID.escuela.dto.inscripciones.InscripcionResponse;
+import DAVID.escuela.services.CrudService;
+
+public interface InscripcionService extends CrudService<InscripcionRequest, InscripcionResponse> {
 }
